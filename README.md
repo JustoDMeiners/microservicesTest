@@ -20,7 +20,7 @@ Microservices with RabbitMQ
 
 -Volver a la carpeta raiz del proyecto demoTestMicroservices y ejecutar "docker-compose up --build" para levantar contenedores con los distintos servicios que requiere el proyecto.
 
--Importar colleciones de Postman que se encuentra dentro de la carpeta postman en la raiz del proyecto.
+-Importar coleciones de Postman que se encuentra dentro de la carpeta postman en la raiz del proyecto.
 
 
 
