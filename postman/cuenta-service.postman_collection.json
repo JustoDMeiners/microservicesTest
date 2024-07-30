@@ -1,0 +1,164 @@
+{
+  "info": {
+    "name": "Account Service API",
+    "_postman_id": "unique-id-account-service",
+    "description": "API Collection for Account Service",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Account",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"numeroCuenta\": \"478758\",\n  \"tipoCuenta\": \"Ahorros\",\n  \"saldoInicial\": 2000,\n  \"estado\": true,\n  \"clienteId\": 1\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8084/cuentas",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8084",
+          "path": ["cuentas"]
+        }
+      }
+    },
+    {
+      "name": "Get Account",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8084/cuentas/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8084",
+          "path": ["cuentas", "1"]
+        }
+      }
+    },
+    {
+      "name": "Update Account",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"numeroCuenta\": \"478758\",\n  \"tipoCuenta\": \"Ahorros\",\n  \"saldoInicial\": 2500,\n  \"estado\": true,\n  \"clienteId\": 1\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8084/cuentas/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8084",
+          "path": ["cuentas", "1"]
+        }
+      }
+    },
+    {
+      "name": "Partially Update Account",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"saldoInicial\": 3000\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8084/cuentas/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8084",
+          "path": ["cuentas", "1"]
+        }
+      }
+    },
+    {
+      "name": "Delete Account",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8084/cuentas/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8084",
+          "path": ["cuentas", "1"]
+        }
+      }
+    },
+    {
+      "name": "Create Movimiento",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"tipoMovimiento\": \"Retiro\",\n  \"valor\": 575.0\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8084/movimientos?cuentaId=1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8084",
+          "path": ["movimientos"],
+          "query": [
+            {
+              "key": "cuentaId",
+              "value": "1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Reporte de Movimientos",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8084/movimientos/reportes?cuentaId=1&startDate=2024-07-29&endDate=2024-08-31",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8084",
+          "path": ["movimientos", "reportes"],
+          "query": [
+            {
+              "key": "cuentaId",
+              "value": "1"
+            },
+            {
+              "key": "startDate",
+              "value": "2024-07-29"
+            },
+            {
+              "key": "endDate",
+              "value": "2024-07-31"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
